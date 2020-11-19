@@ -7,7 +7,7 @@ A simple client side app for displaying transactions.
 - [Overview](#Overview)
 - [Prerequisites](#prerequsitess)
 - [Development](#Development) 
-- [Running](#Running)
+- [Running](#Development)
 - [Using](#Using)
 
 ## Overview
