@@ -1,6 +1,6 @@
 # Transaction List Application
 
-A small client side app for displaying transactions.
+A simple client side app for displaying transactions.
 
 ## Contents
 
@@ -9,6 +9,10 @@ A small client side app for displaying transactions.
 - [Development](#Development) 
 - [Running](#Running)
 - [Using](#Using)
+
+## Overview
+
+A simple client side app that fetches data from an external API and displays it on the browser, while also allowing data persistence for making notes. 
 
 ### UI
 
