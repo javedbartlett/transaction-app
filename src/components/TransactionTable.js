@@ -4,8 +4,6 @@ import { fetchTransactions } from "../utils/dataAccess";
 import { sortTransactions } from "../utils/sortTransactions";
 import { Transaction } from "./Transaction";
 
-const ErrorPanel = ({error}) => <div>Got an error {error}</div>
-
 export const TransactionTable = () => {
   const [transactions, setTransactions] = useState();
   const [headers,] = useState(["Date", "Description", "Amount", "Note"]);
@@ -18,7 +16,7 @@ export const TransactionTable = () => {
         const transactions = await fetchTransactions();
         setTransactions(transactions);
       } catch (e) {
-        setErr(e);
+        console.log(e);
       }
     };
 
@@ -31,10 +29,6 @@ export const TransactionTable = () => {
       setTransactions(sorted);
     }
   }, [sortType]);
-
-  if (err) {
-    return <ErrorPanel error={err} />;
-  }
 
   return !transactions ? (
     <Box>Loading...</Box>
