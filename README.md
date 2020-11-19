@@ -26,6 +26,8 @@ You will need:
 
 The API is simply a single fetch request from the browser to an external API using the cors-anywhere proxy. This is because Cross-Origin Request's from external domains are block by the external API server.
 
+Note: The Cors-Anywhere proxy can sometimes be slow. A solution to this would be to use a separate backend server to fetch data. Another solution would be to change the external API CORS configuration inside the s3 bucket to enable cross origin request.
+
 ## Development
 
 During development it is recommended to run the UI using the NextJS production server.  This provides hot reload and eases debugging with inline-sourcemap.
