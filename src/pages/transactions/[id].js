@@ -1,4 +1,4 @@
-import { Button, Image, Textarea } from "@chakra-ui/react";
+import { Button, Image, Textarea, Box, Heading } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -31,11 +31,14 @@ const Transactions = () => {
   };
 
   return !transaction ? (
-    <div>Loading...</div>
+    <div>Loading... Sorry, proxy is slow today!</div>
   ) : (
-    <>
-      <div>Date: {dayjs(transaction.date).format("MMM DD, YYYY")}</div>
-      <div>Description: {transaction.description}</div>
+    <Box m={5}>
+      <Heading mb={5}>Details</Heading>
+      <Box fontFamily="Menlo">
+        Date: {dayjs(transaction.date).format("MMM DD, YYYY")}
+      </Box>
+      <Box fontFamily="Menlo">Description: {transaction.description}</Box>
       <div>
         Amount: <Amount transaction={transaction} />
       </div>
@@ -68,7 +71,7 @@ const Transactions = () => {
       >
         Back
       </Button>
-    </>
+    </Box>
   );
 };
 

@@ -48,6 +48,7 @@ To start the ui server in production mode, start a terminal window and enter..
 
 ```
 cd transaction-app
+npm i
 npm run build
 npm start
 ```
