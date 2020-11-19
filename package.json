@@ -11,11 +11,15 @@
     "@chakra-ui/react": "^1.0.0",
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
+    "axios": "^0.21.0",
+    "dayjs": "^1.9.6",
     "emotion-theming": "^11.0.0",
     "framer-motion": "^2.9.4",
+    "lodash.find": "^4.6.0",
     "next": "latest",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {}
 }

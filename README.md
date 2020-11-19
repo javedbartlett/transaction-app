@@ -1,23 +1,70 @@
-# Example app with [chakra-ui](https://github.com/chakra-ui/chakra-ui)
+# Transaction List Application
 
-This example features how to use [chakra-ui](https://github.com/chakra-ui/chakra-ui) as the component library within a Next.js app.
+A small client side app for displaying transactions.
 
-We are connecting the Next.js `_app.js` with `chakra-ui`'s Theme and ColorMode containers so the pages can have app-wide dark/light mode. We are also creating some components which shows the usage of `chakra-ui`'s style props.
+## Contents
 
-## Deploy your own
+- [Overview](#Overview)
+- [Prerequisites](#prerequsitess)
+- [Development](#Development) 
+- [Running](#Running)
+- [Using](#Using)
 
-Deploy the example using [Vercel](https://vercel.com):
+### UI
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/next.js/tree/canary/examples/with-chakra-ui)
+The UI is written using the React 17.x framework.  It is a SPA application.  It uses ES10.  Babel is used to compile down to ES5 so that it will run on older browsers, such as Internet Explorer.  Chakra-UI has been used for the presentation.  The UI is transpiled, uglified and minified and packaged by Webpack.
 
-## How to use
+Note: For the purpose of simplicity the UI server serves as both backend and frontend.
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+You will need:
 
-```bash
-npx create-next-app --example with-chakra-ui with-chakra-ui-app
-# or
-yarn create next-app --example with-chakra-ui with-chakra-ui-app
+- Apple Mac or Windows 10 (Linux should work but not tested)
+- Node 10.0 or greater (I used v15.1.0)
+- ~1 minute to build 
+
+### API
+
+The API is simply a single fetch request from the browser to an external API using the cors-anywhere proxy. This is because Cross-Origin Request's from external domains are block by the external API server.
+
+## Development
+
+During development it is recommended to run the UI using the NextJS production server.  This provides hot reload and eases debugging with inline-sourcemap.
+
+To start the ui server in development mode, start a terminal window and enter..
+
+```
+cd transaction-app     
+npm i
+npm run dev
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+The UI will run on port 3000
+
+Note: the UI project is based on a starter project [nextjs-with-chakra-ui](https://github.com/chakra-ui/chakra-ui).  This includes a few extra dependencies, which allow a project to be setup quickly. 
+
+## Production Running
+
+To start the ui server in production mode, start a terminal window and enter..
+
+```
+cd transaction-app
+npm run build
+npm start
+```
+
+## Using
+
+In either production or development mode go to http://localhost:3000.
+
+The system comprises of 2 views:
+
+- Transaction List 
+- Transaction Details
+
+You are initially presented with a list of transactions, which are ordered in the same way as the API presents them.  From here you can select the drop down menu to sort transactions in a different order. You can also select the description of a transaction to reach the details view, where you are able to edit notes. The notes are persisted through localstorage.
+
+The format of the URL is:
+
+http://localhost:3000/ - displays all the transcations
+
+http://localhost:3000/transactions/3 - goes to transaction 4
