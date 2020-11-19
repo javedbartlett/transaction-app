@@ -31,7 +31,7 @@ export const TransactionTable = () => {
   }, [sortType]);
 
   return !transactions ? (
-    <Box>Loading... Sorry, proxy is slow!</Box>
+    <Box>Loading...</Box>
   ) : (
     <Flex flexDirection="column">
       <Select

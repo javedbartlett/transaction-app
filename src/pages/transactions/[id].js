@@ -31,7 +31,7 @@ const Transactions = () => {
   };
 
   return !transaction ? (
-    <div>Loading... Sorry, proxy is slow today!</div>
+    <div>Loading...</div>
   ) : (
     <Box m={5}>
       <Heading mb={5}>Details</Heading>

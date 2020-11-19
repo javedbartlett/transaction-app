@@ -24,9 +24,7 @@ You will need:
 
 ### API
 
-The API is simply a single fetch request from the browser to an external API using the cors-anywhere proxy. This is because Cross-Origin Request's from external domains are block by the external API server.
-
-Note: The Cors-Anywhere proxy can sometimes be slow. A solution to this would be to use a separate backend server to fetch data. Another solution would be to change the external API CORS configuration inside the s3 bucket to enable cross origin request.
+The API is simply a single fetch request from the browser to an external API using the NextJS server.
 
 ## Development
 
@@ -83,5 +81,4 @@ This application was completed in less than 24 hours. With more time I would:
 - Better state management (Redux/useReducer/useContext)
 - Use an external library such as React Data Grid for creating a table to store data instead of using CSS grid
 - Add unit tests
-- Separate backend for serving up data, rather than using cors-anywhere proxy
 
