@@ -7,7 +7,7 @@ const Amount = ({transaction}) =>  {
   const negativeOrPositiveSign = transaction.isCredit ? "+" : "-";    
 
   return (
-    <Box fontFamily="Menlo" css={amountTextColor} key={transaction.id}>
+    <Box ml={5} fontFamily="Menlo" css={amountTextColor} key={transaction.id}>
     {negativeOrPositiveSign + '$' + transaction.amount}
   </Box>
   )  

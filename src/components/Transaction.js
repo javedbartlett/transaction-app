@@ -1,4 +1,4 @@
-import { Box, color } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Link from "next/link";
 import * as dayjs from "dayjs";
 import Amount from "./Amount";
@@ -8,13 +8,15 @@ export const Transaction = ({ transaction }) => {
 
   return (
     <>
-      <Box fontFamily="Menlo">
+      <Box>
         {dayjs(transaction.date).format("MMM DD, YYYY")}
       </Box>
       <Box
         color="blue"
         _hover={{ color: "darkblue", textDecoration: "underline" }}
         fontFamily="Menlo"
+        whiteSpace="nowrap"
+        isTruncated
       >
         <Link href={`/transactions/${transaction.id}`}>
           {transaction.description}

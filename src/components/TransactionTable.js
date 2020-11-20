@@ -47,7 +47,7 @@ export const TransactionTable = () => {
       </Select>
       <SimpleGrid columns={4} spacing={0}>
         {headers.map((header, i) => (
-          <Box fontFamily="Menlo" fontWeight="bold" key={i}>
+          <Box ml={header == 'Amount' ? 5 : 0} fontFamily="Menlo" fontWeight="bold" key={i}>
             {header}
           </Box>
         ))}
