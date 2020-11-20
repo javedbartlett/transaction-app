@@ -8,7 +8,9 @@ export const Transaction = ({ transaction }) => {
 
   return (
     <>
-      <Box fontFamily="Menlo">{dayjs(transaction.date).format("MMM DD, YYYY")}</Box>
+      <Box fontFamily="Menlo">
+        {dayjs(transaction.date).format("MMM DD, YYYY")}
+      </Box>
       <Box
         color="blue"
         _hover={{ color: "darkblue", textDecoration: "underline" }}
@@ -19,7 +21,9 @@ export const Transaction = ({ transaction }) => {
         </Link>
       </Box>
       <Amount transaction={transaction} />
-      <Box whiteSpace="nowrap" fontFamily="Menlo">{note}</Box>
+      <Box isTruncated fontFamily="Menlo">
+        {note}
+      </Box>
     </>
   );
 };
